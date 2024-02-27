@@ -1,0 +1,17 @@
+.mainContainer{
+    padding: 4rem;
+}
+
+.gamesContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.buttonsNavContainer{
+    margin-top: 5rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}

@@ -1,0 +1,28 @@
+<mat-sidenav-container class="example-container">
+    <mat-sidenav #sidenav mode="side" [opened]="open" class="sidenavList">
+      <mat-nav-list>
+        <mat-list-item class="itemNav" routerLink="allgames">
+          <mat-icon matListItemIcon>extension</mat-icon>
+          <span>All Games</span>
+        </mat-list-item>
+        <mat-list-item class="itemNav" routerLink="search">
+          <mat-icon matListItemIcon>search</mat-icon>
+          <span>Search</span>
+        </mat-list-item>
+        <mat-list-item class="itemNav" routerLink="yeartop">
+          <mat-icon matListItemIcon>trending_up</mat-icon>
+          <span>Year Top</span>
+        </mat-list-item>
+        <mat-list-item class="itemNav" routerLink="platforms">
+          <mat-icon matListItemIcon>android</mat-icon>
+          <span>Platforms</span>
+        </mat-list-item>
+        <mat-list-item class="itemNav" routerLink="genres">
+          <mat-icon matListItemIcon>bookmark</mat-icon>
+          <span>Genres</span>
+        </mat-list-item>
+      </mat-nav-list>
+    </mat-sidenav>
+  
+    <mat-sidenav-content> <router-outlet></router-outlet> </mat-sidenav-content>
+  </mat-sidenav-container>

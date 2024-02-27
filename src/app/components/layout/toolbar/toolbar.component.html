@@ -1,0 +1,12 @@
+<p>
+    <mat-toolbar color="primary">
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="toggleSidenav.emit()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Game Store</span>
+      <span class="example-spacer"></span>
+      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" routerLink="cart">
+        <mat-icon [matBadge]="cart().length" matBadgeColor="warn">shopping_cart</mat-icon>
+      </button>
+    </mat-toolbar>
+</p>

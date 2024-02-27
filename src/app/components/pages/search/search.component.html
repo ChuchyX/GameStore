@@ -1,0 +1,23 @@
+<div class="mainContainer">
+
+    <span class="p-input-icon-left searchBar">
+        <i class="pi pi-search"></i>
+        <input type="text" pInputText [(ngModel)]="value" class="searchInput" (keydown.enter)="search()"/>
+    </span>
+
+    @if(games.length !== 0)
+    {
+        <div class="gamesContainer">
+            @for (game of games; track game.name) {
+                <app-game-card [game]="game"/>
+            }
+        </div>   
+        
+        <div class="buttonsNavContainer">
+            <p-button label="Previous" icon="pi pi-angle-left" severity="help" [disabled]="previous === null" (click)="getGames(previous)"></p-button>
+            <p-button label="Next" icon="pi pi-angle-right" severity="help" [disabled]="next === null" (click)="getGames(next)"></p-button>
+        </div>
+    } 
+    
+</div>
+

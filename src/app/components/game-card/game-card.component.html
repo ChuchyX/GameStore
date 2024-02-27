@@ -1,0 +1,29 @@
+<p-card [header]="game.name" [subheader]="game.released.getFullYear().toString()" [style]="{ width: '360px'}">
+    <ng-template pTemplate="header">
+        <img alt="Card" [src]="game.background_image" />
+    </ng-template>
+    <p>
+        <span>Genres: </span>
+        @for (genre of game.genres; track genre.id; let last = $last) {
+            @if (last) {
+                <span> {{genre.name}}</span>
+            }
+            @else {<span> {{genre.name}} |</span>}
+            
+        }
+    </p>
+
+    <p>
+        <span>Platforms: </span>
+        @for (platform of game.parent_platforms; track platform.platform.id; let last = $last) {
+            @if (last) {
+                <span> {{platform.platform.name}}</span>
+            }
+            @else {<span> {{platform.platform.name}} |</span>}
+            
+        }
+    </p>
+    <ng-template pTemplate="footer">
+        <p-button label="Add to Cart" icon="pi pi-cart-plus" severity="success" (click)="addToCart.emit(game)"></p-button>
+    </ng-template>
+</p-card>

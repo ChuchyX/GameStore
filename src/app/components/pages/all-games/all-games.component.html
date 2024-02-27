@@ -1,0 +1,18 @@
+<div class="mainContainer">   
+    @if(games.length === 0)
+    {
+        <p-button label="See All Games" (click)="getAllGames()" severity="help"></p-button>
+    }
+    @else {
+        <div class="gamesContainer">
+            @for (game of games; track game.name) {
+                <app-game-card [game]="game" (addToCart)="addToCart($event)"/>
+            }
+        </div>   
+        
+        <div class="buttonsNavContainer">
+            <p-button label="Previous" icon="pi pi-angle-left" severity="help" [disabled]="previous === null" (click)="getGames(previous)"></p-button>
+            <p-button label="Next" icon="pi pi-angle-right" severity="help" [disabled]="next === null" (click)="getGames(next)"></p-button>
+        </div>
+    }  
+</div>
